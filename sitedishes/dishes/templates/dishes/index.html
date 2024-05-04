@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<p><h1>{{title}}</h1>
+<br>
+<ul>
+    {% for d in dishes %}
+    <li>
+        <h2>{{d.title}}</h2>
+        {% autoescape off %}
+        {% endautoescape%}
+                <div class="clear"></div>
+        <p class="link-read-recipe"><a href="{{d.get_absolute_url}}">Смотреть рецепт</a></p>
+
+        <br>
+    <hr>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
